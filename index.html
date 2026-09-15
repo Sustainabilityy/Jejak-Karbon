@@ -7638,6 +7638,176 @@ document.addEventListener('DOMContentLoaded',function(){
 </script>
 
 </body>  
+
+<style id="ggf-modern-v20">
+/* =========================================================
+   JejakKarbonKu v20 — GGF-inspired Sustainability Experience
+   Visual direction: editorial sustainability site + executive dashboard
+   Functional HTML/JS intentionally preserved.
+   ========================================================= */
+:root{
+  --ggf-forest:#073f2d;
+  --ggf-deep:#062f25;
+  --ggf-green:#0b7655;
+  --ggf-mint:#dff4e9;
+  --ggf-lime:#b8df6a;
+  --ggf-yellow:#f2c94c;
+  --ggf-orange:#e98b3a;
+  --ggf-cream:#f7f5ed;
+  --ggf-white:#fff;
+  --ggf-ink:#18352b;
+  --ggf-muted:#6f8179;
+  --ggf-line:rgba(7,63,45,.10);
+  --ggf-shadow:0 18px 50px rgba(5,59,42,.10);
+}
+
+body{
+  background:
+    radial-gradient(circle at 88% 3%,rgba(184,223,106,.14),transparent 24rem),
+    radial-gradient(circle at 5% 42%,rgba(11,118,85,.07),transparent 25rem),
+    #f4f7f2!important;
+  color:var(--ggf-ink)!important;
+}
+body:before{
+  opacity:.55!important;
+  background-size:32px 32px!important;
+  background-image:radial-gradient(rgba(7,63,45,.045) 1px,transparent 1px)!important;
+}
+
+/* Sidebar = clean corporate navigation */
+.app{grid-template-columns:238px minmax(0,1fr)!important}
+.sidebar{
+  padding:18px 13px!important;
+  background:rgba(255,255,255,.88)!important;
+  backdrop-filter:blur(24px)!important;
+  border-right:1px solid var(--ggf-line)!important;
+  box-shadow:10px 0 40px rgba(4,55,40,.035)!important;
+}
+.brand{padding:7px 8px 18px!important;border-bottom:1px solid var(--ggf-line)!important}
+.brand h2{color:var(--ggf-forest)!important;font-size:17px!important}
+.brand span{color:var(--ggf-green)!important}
+.sidebar-user{border:1px solid var(--ggf-line)!important;background:linear-gradient(135deg,#fff,#eff8f3)!important;box-shadow:none!important}
+.nav-label{color:#82938c!important}
+.nav button{border-radius:12px!important;padding:10px 12px!important;font-size:12.5px!important}
+.nav button.active{background:linear-gradient(135deg,var(--ggf-forest),#0d8b62)!important;box-shadow:0 10px 24px rgba(7,63,45,.20)!important}
+.nav button:hover{background:#edf8f2!important;color:var(--ggf-green)!important}
+
+.main{padding-bottom:90px!important}
+.page{max-width:1600px!important;padding:25px clamp(16px,3vw,46px)!important}
+.topline{margin-bottom:18px!important}
+.topline h1{color:var(--ggf-forest)!important;font-size:clamp(26px,2.5vw,38px)!important;letter-spacing:-1.4px!important}
+.topline p{color:var(--ggf-muted)!important}
+
+/* Cards */
+.card,.kpi-box,.team-card-white,.rank-table-wrapper{
+  background:rgba(255,255,255,.92)!important;
+  border:1px solid var(--ggf-line)!important;
+  box-shadow:0 10px 32px rgba(4,62,44,.055)!important;
+  border-radius:20px!important;
+}
+.card:hover,.kpi-box:hover,.team-card-white:hover{box-shadow:var(--ggf-shadow)!important;transform:translateY(-3px)!important}
+.card h3{color:var(--ggf-forest)!important}
+
+/* Hero — more like an editorial sustainability landing page */
+#dashboard .nature-banner{
+  height:310px!important;min-height:310px!important;border-radius:28px!important;
+  background-position:center 42%!important;
+  box-shadow:0 25px 60px rgba(4,66,47,.18)!important;
+}
+#dashboard .nature-banner-overlay{
+  background:linear-gradient(100deg,rgba(3,47,35,.98) 0%,rgba(5,91,66,.86) 46%,rgba(6,73,53,.22) 100%)!important;
+}
+#dashboard .nature-banner-content{padding:40px 42px!important;max-width:820px!important}
+#dashboard .nature-welcome{color:var(--ggf-lime)!important;letter-spacing:1.6px!important;font-size:10px!important;text-transform:uppercase}
+#dashboard .nature-banner h2{font-size:clamp(34px,4vw,58px)!important;line-height:.98!important;letter-spacing:-2.4px!important;margin:10px 0 12px!important}
+#dashboard .nature-banner p{font-size:13px!important;max-width:600px!important;color:rgba(255,255,255,.78)!important}
+#dashboard .nature-actions{margin-top:18px!important}
+#dashboard .nature-btn{border-radius:999px!important;padding:10px 16px!important;border:1px solid rgba(255,255,255,.18)!important;backdrop-filter:blur(8px)!important}
+#dashboard .nature-stat{
+  width:215px!important;right:30px!important;bottom:28px!important;padding:17px 18px!important;
+  border-radius:20px!important;background:rgba(255,255,255,.13)!important;
+  border:1px solid rgba(255,255,255,.18)!important;backdrop-filter:blur(18px)!important;
+  box-shadow:0 18px 40px rgba(0,0,0,.12)!important;
+}
+#dashboard .nature-stat strong{font-size:42px!important;color:#fff!important}
+
+/* Sustainability pillars — editorial cards */
+.sustainability-pillars{gap:13px!important;margin-top:18px!important}
+.sustainability-pillars .sus-visual-card{
+  min-height:205px!important;border-radius:22px!important;box-shadow:0 15px 35px rgba(3,63,45,.12)!important;
+  border:1px solid rgba(255,255,255,.18)!important;overflow:hidden!important;
+}
+.sustainability-pillars .sus-visual-card:hover{transform:translateY(-5px)!important;box-shadow:0 24px 48px rgba(3,63,45,.16)!important}
+.sustainability-pillars .sus-content{padding:21px!important}
+.sustainability-pillars .sus-content h3{font-size:18px!important;letter-spacing:-.4px!important}
+.sustainability-pillars .sus-content p{font-size:10.5px!important;color:rgba(255,255,255,.78)!important}
+.sustainability-pillars .sus-visual-card:nth-child(1){--pillar-accent:#9ed35a}
+.sustainability-pillars .sus-visual-card:nth-child(2){--pillar-accent:#55c79b}
+.sustainability-pillars .sus-visual-card:nth-child(3){--pillar-accent:#f2c94c}
+.sustainability-pillars .sus-visual-card:nth-child(4){--pillar-accent:#ef9a5d}
+.sustainability-pillars .sus-kicker{color:var(--pillar-accent)!important}
+
+/* KPI hierarchy */
+.grid-kpi{gap:13px!important}
+.kpi-main{border-radius:22px!important;min-height:178px!important;box-shadow:0 18px 42px rgba(3,86,60,.17)!important}
+.kpi-main .val{font-size:40px!important}
+.kpi-box{min-height:120px!important;padding:18px!important}
+.kpi-box strong{color:var(--ggf-forest)!important;font-size:29px!important}
+.kpi-box small{color:var(--ggf-green)!important}
+
+/* Dashboard panels */
+.dashboard-insights-grid{gap:14px!important}
+.dashboard-panel,.trend-panel,.distribution-panel,.team-preview-panel,.sustainability-news-panel{
+  border-radius:20px!important;border:1px solid var(--ggf-line)!important;
+  box-shadow:0 10px 30px rgba(4,62,44,.055)!important;background:rgba(255,255,255,.94)!important;
+}
+.dashboard-panel-head{padding:17px 18px 10px!important}
+.dashboard-panel-head h3{font-size:13px!important;color:var(--ggf-forest)!important}
+
+/* Charts: stronger hierarchy, less visual noise */
+.chart{filter:drop-shadow(0 4px 8px rgba(4,62,44,.03))}
+.break-row b{color:#385449!important}
+.break-row em{color:var(--ggf-green)!important}
+.bar{height:7px!important;background:#edf2ee!important}
+.bar span{background:linear-gradient(90deg,#0b7655,#79bd7a)!important}
+
+/* Ranking */
+.ranking-podium-card{border-radius:18px!important;border:1px solid var(--ggf-line)!important}
+.ranking-podium-card.rank-1{background:linear-gradient(145deg,#f7f4e4,#dcf5e9)!important}
+.ranking-podium-card b{color:var(--ggf-green)!important}
+
+/* News / insights */
+.news-card{border:1px solid var(--ggf-line)!important;border-radius:18px!important;overflow:hidden!important;background:#fff!important;box-shadow:0 8px 24px rgba(4,62,44,.05)!important}
+.news-card:hover{transform:translateY(-4px)!important;box-shadow:0 18px 35px rgba(4,62,44,.10)!important}
+.news-control-btn{border-radius:999px!important}
+
+/* Buttons */
+.btn.primary{background:linear-gradient(135deg,#07563e,#10a477)!important;border-radius:12px!important}
+.btn.outline{border-color:var(--ggf-line)!important;border-radius:12px!important}
+
+/* Subtle reveal animations */
+@keyframes ggfRise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+#dashboard .card,#dashboard .kpi-main,#dashboard .kpi-box,#dashboard .sustainability-pillars .sus-visual-card{animation:ggfRise .55s cubic-bezier(.16,1,.3,1) both}
+#dashboard .sustainability-pillars .sus-visual-card:nth-child(2){animation-delay:.05s}
+#dashboard .sustainability-pillars .sus-visual-card:nth-child(3){animation-delay:.10s}
+#dashboard .sustainability-pillars .sus-visual-card:nth-child(4){animation-delay:.15s}
+
+/* Mobile */
+@media(max-width:900px){
+  .app{grid-template-columns:1fr!important}
+  .page{padding:18px 14px 92px!important}
+}
+@media(max-width:760px){
+  #dashboard .nature-banner{height:330px!important;min-height:330px!important;border-radius:22px!important}
+  #dashboard .nature-banner-content{padding:25px 20px!important}
+  #dashboard .nature-banner h2{font-size:32px!important;max-width:310px!important}
+  #dashboard .nature-stat{left:20px!important;right:auto!important;bottom:18px!important;width:165px!important}
+  .sustainability-pillars{grid-template-columns:1fr!important}
+  .sustainability-pillars .sus-visual-card{min-height:180px!important}
+}
+@media(prefers-reduced-motion:reduce){#dashboard .card,#dashboard .kpi-main,#dashboard .kpi-box,#dashboard .sustainability-pillars .sus-visual-card{animation:none!important}}
+</style>
+
 </html>
 <style id="v16-team-hero-input-fix">
 .team-hero-photo-label{display:none!important}
