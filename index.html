@@ -3605,6 +3605,125 @@ html[data-theme="dark"] ::-webkit-scrollbar-track{ background:#1c2921; }
 html[data-theme="dark"] .modal-overlay{ background:rgba(0,0,0,.7); }
 </style>
 
+
+<style id="ggf-professional-v21">
+/* =========================================================
+   GGF PROFESSIONAL UI V21
+   Clear hierarchy / editorial sustainability / high readability
+   ========================================================= */
+:root{
+ --ggf-green:#0B5D3B;
+ --ggf-green-2:#167A52;
+ --ggf-green-3:#39A96B;
+ --ggf-lime:#B8D86A;
+ --ggf-cream:#F7F6F0;
+ --ggf-paper:#FFFFFF;
+ --ggf-ink:#17352A;
+ --ggf-body:#42544C;
+ --ggf-muted:#71817A;
+ --ggf-line:#E2E9E4;
+ --ggf-soft:#EEF6F1;
+ --ggf-yellow:#E8C75A;
+ --ggf-shadow:0 8px 28px rgba(14,65,43,.07);
+ --ggf-shadow-lg:0 18px 50px rgba(14,65,43,.11);
+}
+html,body{background:var(--ggf-cream)!important;color:var(--ggf-body)!important}
+body{font-family:'Plus Jakarta Sans',Arial,sans-serif!important}
+.app{grid-template-columns:248px minmax(0,1fr)!important;background:var(--ggf-cream)}
+.sidebar{background:#fff!important;border-right:1px solid var(--ggf-line)!important;padding:22px 16px!important;box-shadow:4px 0 24px rgba(20,70,45,.035)!important}
+.brand{border-bottom:1px solid var(--ggf-line)!important;padding-bottom:18px!important}
+.brand-logo{max-width:132px!important}
+.page{max-width:1500px!important;margin:0 auto!important;padding:30px clamp(20px,3.2vw,48px) 70px!important}
+.topline{border:0!important;padding:0!important;margin:0 0 22px!important;align-items:center!important}
+.topline h1{font-size:30px!important;color:var(--ggf-ink)!important;letter-spacing:-1.1px!important;font-weight:800!important}
+.topline p{font-size:12.5px!important;color:var(--ggf-muted)!important;max-width:700px!important}
+.card{background:#fff!important;border:1px solid var(--ggf-line)!important;border-radius:18px!important;box-shadow:var(--ggf-shadow)!important;padding:22px!important}
+.card:hover{box-shadow:var(--ggf-shadow-lg)!important}
+.card h3{color:var(--ggf-ink)!important;font-size:16px!important}
+/* Hero: editorial, not cluttered */
+#dashboard .nature-banner{height:300px!important;min-height:300px!important;border-radius:24px!important;box-shadow:var(--ggf-shadow-lg)!important;background-position:center!important}
+#dashboard .nature-banner-overlay{background:linear-gradient(90deg,rgba(6,55,36,.94) 0%,rgba(8,79,52,.78) 48%,rgba(8,79,52,.20) 100%)!important}
+#dashboard .nature-banner-content{padding:42px 44px!important;max-width:720px!important}
+#dashboard .nature-welcome{font-size:10px!important;letter-spacing:1.7px!important;color:#D8F2C0!important;text-transform:uppercase!important;font-weight:800!important}
+#dashboard .nature-banner h2{font-size:clamp(34px,4vw,54px)!important;line-height:1.02!important;letter-spacing:-2.2px!important;margin:8px 0 12px!important;color:#fff!important}
+#dashboard .nature-banner p{font-size:12px!important;line-height:1.7!important;color:rgba(255,255,255,.84)!important;max-width:560px!important}
+#dashboard .nature-actions{margin-top:20px!important}
+#dashboard .nature-btn{border-radius:999px!important;padding:10px 16px!important;font-size:10px!important;font-weight:800!important}
+#dashboard .nature-stat{width:178px!important;right:30px!important;bottom:28px!important;border-radius:18px!important;background:rgba(255,255,255,.94)!important;border:0!important;color:var(--ggf-ink)!important;box-shadow:0 18px 40px rgba(0,0,0,.13)!important;backdrop-filter:blur(12px)!important}
+#dashboard .nature-stat span{color:var(--ggf-green)!important;font-size:8px!important}
+#dashboard .nature-stat strong{color:var(--ggf-ink)!important;font-size:30px!important}
+#dashboard .nature-stat small{color:var(--ggf-muted)!important}
+#dashboard .hero-top-meta>span,#dashboard .hero-notification{background:rgba(255,255,255,.12)!important;border-color:rgba(255,255,255,.2)!important;color:#fff!important}
+/* KPI */
+.grid-kpi{grid-template-columns:1.25fr repeat(3,1fr)!important;gap:14px!important;margin:18px 0 24px!important}
+.kpi-main,.kpi-main.dark,.kpi-main.netto{background:var(--ggf-green)!important;border-radius:18px!important;box-shadow:var(--ggf-shadow-lg)!important;border:0!important;padding:22px!important}
+.kpi-main .val{font-size:34px!important;color:#fff!important}
+.kpi-main .sub{background:rgba(255,255,255,.13)!important;color:#fff!important}
+.kpi-box{background:#fff!important;border:1px solid var(--ggf-line)!important;border-radius:18px!important;box-shadow:var(--ggf-shadow)!important;padding:20px!important}
+.kpi-box span,.kpi-box small{color:var(--ggf-muted)!important}
+.kpi-box strong,.kpi-box .value{color:var(--ggf-ink)!important}
+/* Four pillars */
+.sustainability-pillars{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:14px!important;margin-top:24px!important}
+.sustainability-pillars .sus-visual-card{height:230px!important;min-height:230px!important;border-radius:20px!important;box-shadow:var(--ggf-shadow)!important;border:1px solid rgba(255,255,255,.5)!important}
+.sustainability-pillars .sus-visual-card:after{background:linear-gradient(180deg,rgba(4,42,28,.05) 15%,rgba(3,42,28,.86) 100%)!important}
+.sustainability-pillars .sus-content{min-height:230px!important;padding:20px!important;justify-content:flex-end!important}
+.sustainability-pillars .sus-kicker{color:#D9F0C0!important;font-size:8px!important;letter-spacing:1.2px!important}
+.sustainability-pillars .sus-content h3{color:#fff!important;font-size:17px!important;line-height:1.15!important;margin:6px 0!important}
+.sustainability-pillars .sus-content p{color:rgba(255,255,255,.86)!important;font-size:9.5px!important;line-height:1.55!important}
+/* Charts / insight panels */
+.dashboard-insights-grid{gap:16px!important;margin-top:18px!important}
+.dashboard-panel,.trend-panel,.distribution-panel,.leaderboard-panel{background:#fff!important;border:1px solid var(--ggf-line)!important;border-radius:18px!important;box-shadow:var(--ggf-shadow)!important}
+.dashboard-panel-head h3,.trend-panel h3,.leaderboard-head h3{color:var(--ggf-ink)!important}
+.dashboard-panel-head p,.trend-panel p{color:var(--ggf-muted)!important}
+/* Ranking */
+.ranking-podium-card{background:#fff!important;border:1px solid var(--ggf-line)!important;box-shadow:var(--ggf-shadow)!important}
+.ranking-podium-card:hover{box-shadow:var(--ggf-shadow-lg)!important}
+.lb-name,.lb-rank{color:var(--ggf-ink)!important}
+.lb-score{color:var(--ggf-green)!important}
+.lb-item{background:#fff!important;border-color:var(--ggf-line)!important}
+.rank-badge.top{background:#EDF5D9!important;color:#47711F!important}
+.rank-badge.runner{background:#FFF5D9!important;color:#8A6B17!important}
+.rank-badge.third{background:#F5E9DC!important;color:#86542E!important}
+/* News */
+.sustainability-news-head h3{color:var(--ggf-ink)!important;font-size:22px!important}
+.sustainability-news-head p{color:var(--ggf-muted)!important}
+.news-card{background:#fff!important;border:1px solid var(--ggf-line)!important;box-shadow:var(--ggf-shadow)!important}
+.news-body h4{color:var(--ggf-ink)!important}
+.news-body p{color:var(--ggf-body)!important}
+.news-category{background:#fff!important;color:var(--ggf-green)!important}
+.news-read{background:var(--ggf-green)!important}
+/* Forms / controls: readable everywhere */
+select,input,textarea{color:var(--ggf-ink)!important;background:#fff!important;border-color:var(--ggf-line)!important}
+button{font-weight:700}
+/* Sidebar readability */
+.sidebar *{color:inherit}
+.sidebar a,.sidebar button{color:#50635A!important}
+.sidebar .active,.sidebar a.active{color:var(--ggf-green)!important;background:#EDF6F0!important}
+.sidebar small,.sidebar span{color:#7A8882!important}
+/* Remove competing decorative noise */
+.nature-leaf{display:none!important}
+/* Responsive */
+@media(max-width:1180px){
+ .app{grid-template-columns:220px minmax(0,1fr)!important}
+ .grid-kpi{grid-template-columns:repeat(2,1fr)!important}
+ .sustainability-pillars{grid-template-columns:repeat(2,1fr)!important}
+}
+@media(max-width:760px){
+ .app{display:block!important}
+ .sidebar{display:none!important}
+ .page{padding:20px 14px 80px!important}
+ .topline{display:block!important;margin-bottom:16px!important}
+ .topline h1{font-size:25px!important}
+ #dashboard .nature-banner{height:360px!important;min-height:360px!important;border-radius:20px!important}
+ #dashboard .nature-banner-content{padding:70px 22px 20px!important}
+ #dashboard .nature-banner h2{font-size:31px!important}
+ #dashboard .nature-stat{left:22px!important;right:auto!important;bottom:18px!important;width:145px!important}
+ .grid-kpi{grid-template-columns:1fr!important}
+ .sustainability-pillars{grid-template-columns:1fr!important}
+ .sustainability-pillars .sus-visual-card{height:205px!important;min-height:205px!important}
+ .sustainability-pillars .sus-content{min-height:205px!important}
+}
+</style>
 </head>  
 <body>  
 
