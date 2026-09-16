@@ -3865,6 +3865,173 @@ html[data-theme="dark"] #dashboard .team-pulse-summary{background:rgba(0,230,160
 }
 </style>
 
+<style id="live-gallery-shapes-v1">
+/* =========================================================================
+   LIVE PHOTO GALLERY — animated shaped frames with auto-crossfading photos.
+   Pure CSS + small JS timer; does not touch any existing markup/logic.
+   ========================================================================= */
+.live-gallery-strip{
+  margin:18px 0 26px;padding:20px clamp(16px,3vw,26px);border-radius:24px;
+  background:linear-gradient(135deg,rgba(75,122,91,.08),rgba(0,230,160,.05) 45%,rgba(157,78,221,.06));
+  border:1px solid rgba(75,122,91,.14);
+  display:flex;flex-wrap:wrap;align-items:center;gap:22px;justify-content:space-between;
+}
+.live-gallery-head{max-width:280px;flex:1 1 220px;}
+.lg-title-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.lg-title-row h3{margin:0;font-size:17px;font-weight:900;color:var(--esg-dark);letter-spacing:-.3px;}
+.live-gallery-head p{margin:6px 0 0;font-size:12px;color:var(--text-muted);line-height:1.5;font-weight:500;}
+.lg-live-chip{
+  display:inline-flex;align-items:center;gap:6px;padding:4px 9px;border-radius:20px;
+  background:linear-gradient(120deg,#ff5f6d,#ffb703);color:white;font-size:10px;font-weight:900;
+  letter-spacing:.6px;box-shadow:0 6px 16px -4px rgba(255,95,109,.55);
+}
+.lg-live-dot{width:6px;height:6px;border-radius:50%;background:white;display:inline-block;animation:lgPulseDot 1.2s infinite;}
+@keyframes lgPulseDot{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.35;transform:scale(.7);}}
+
+.live-gallery-shapes{display:flex;gap:20px;flex-wrap:wrap;align-items:flex-end;}
+.lg-shape{
+  position:relative;width:104px;height:104px;overflow:hidden;flex-shrink:0;isolation:isolate;
+  box-shadow:0 14px 30px -10px rgba(20,40,30,.35);
+  animation:lgFloat 5.5s ease-in-out infinite;
+}
+.lg-shape:nth-child(1){animation-delay:0s;}
+.lg-shape:nth-child(2){animation-delay:.4s;width:120px;height:120px;}
+.lg-shape:nth-child(3){animation-delay:.8s;}
+.lg-shape:nth-child(4){animation-delay:1.2s;width:96px;height:96px;}
+@keyframes lgFloat{0%,100%{transform:translateY(0) rotate(0deg);}50%{transform:translateY(-9px) rotate(1.5deg);}}
+
+.lg-circle{border-radius:50%;border:3px solid #00e6a0;}
+.lg-blob{
+  border-radius:42% 58% 65% 35% / 45% 40% 60% 55%;
+  border:3px solid #ffb703;
+  animation:lgFloat 5.5s ease-in-out infinite, lgMorph 9s ease-in-out infinite;
+}
+@keyframes lgMorph{
+  0%,100%{border-radius:42% 58% 65% 35% / 45% 40% 60% 55%;}
+  50%{border-radius:60% 40% 35% 65% / 55% 65% 35% 45%;}
+}
+.lg-hex{
+  clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);
+  border:none;background:#4cc9f0;
+}
+.lg-hex::after{content:"";position:absolute;inset:0;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);box-shadow:inset 0 0 0 3px #4cc9f0;z-index:5;pointer-events:none;}
+.lg-squircle{border-radius:32%;border:3px solid #9d4edd;}
+
+.lg-bg{
+  position:absolute;inset:0;background-size:cover;background-position:center;
+  opacity:0;transform:scale(1.12);
+  transition:opacity 1.15s ease;
+  animation:lgKenBurns 8s ease-in-out infinite alternate;
+}
+.lg-bg.front{opacity:1;z-index:2;}
+@keyframes lgKenBurns{from{transform:scale(1.12);}to{transform:scale(1.28);}}
+
+.lg-shine{
+  position:absolute;inset:0;z-index:4;pointer-events:none;
+  background:linear-gradient(155deg,rgba(255,255,255,.32) 0%,rgba(255,255,255,0) 32%,rgba(0,0,0,.18) 100%);
+}
+.lg-caption{
+  position:absolute;left:0;right:0;bottom:0;z-index:6;text-align:center;
+  padding:5px 4px 6px;font-size:9px;font-weight:800;color:white;letter-spacing:.2px;
+  background:linear-gradient(0deg,rgba(0,0,0,.62),rgba(0,0,0,0));
+}
+@media(prefers-reduced-motion: reduce){
+  .lg-shape,.lg-blob,.lg-bg{animation:none!important;}
+}
+@media(max-width:760px){
+  .live-gallery-strip{padding:16px;gap:16px;}
+  .live-gallery-shapes{gap:14px;}
+  .lg-shape{width:78px!important;height:78px!important;}
+  .lg-caption{font-size:8px;}
+}
+html[data-theme="dark"] .live-gallery-strip{
+  background:linear-gradient(135deg,rgba(0,230,160,.09),rgba(157,78,221,.10) 55%,rgba(76,201,240,.08));
+  border-color:rgba(0,230,160,.18);
+}
+html[data-theme="dark"] .lg-shape{box-shadow:0 14px 34px -8px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.05);}
+</style>
+
+<style id="ui-color-pop-v2">
+/* =========================================================================
+   COLOR-POP REFRESH — extra vivid accents layered on top of the existing
+   palette. Purely additive; keeps original classes/behaviour intact.
+   ========================================================================= */
+:root{
+  --pop-coral:#ff5f6d;
+  --pop-gold:#ffb703;
+  --pop-sky:#4cc9f0;
+  --pop-violet:#9d4edd;
+  --pop-mint:#00e6a0;
+}
+.card{position:relative;overflow:hidden;}
+.card::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--pop-mint),var(--pop-sky),var(--pop-violet),var(--pop-gold));
+  opacity:.85;
+}
+.kpi-main{position:relative;overflow:hidden;}
+.kpi-main::after{
+  content:"";position:absolute;width:140px;height:140px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,.18),transparent 70%);
+  top:-50px;right:-40px;pointer-events:none;
+}
+.kpi-main.netto::after{background:radial-gradient(circle,rgba(255,183,3,.28),transparent 70%);}
+.kpi-main.dark::after{background:radial-gradient(circle,rgba(0,230,160,.28),transparent 70%);}
+.nav button.active{box-shadow:var(--shadow-soft),0 0 0 1px rgba(255,255,255,.12) inset;}
+.rank-badge.top{background:linear-gradient(120deg,#d7f0d0,#b8f2d8);color:#1f5233;}
+.rank-badge.runner{background:linear-gradient(120deg,#fff0c2,#ffe08a);color:#7a5a26;}
+.rank-badge.third{background:linear-gradient(120deg,#ffe1c2,#ffcfa3);color:#7a4325;}
+::-webkit-scrollbar{width:9px;height:9px;}
+::-webkit-scrollbar-thumb{background:linear-gradient(180deg,var(--pop-mint),var(--pop-sky));border-radius:20px;}
+::-webkit-scrollbar-track{background:transparent;}
+</style>
+
+<style id="dark-mode-aurora-v2">
+/* =========================================================================
+   DARK MODE — "Aurora" refresh: deeper, richer, more colorful dark theme
+   layered on top of the existing dark-mode variables/rules.
+   ========================================================================= */
+html[data-theme="dark"] body{
+  background:
+    radial-gradient(circle at 12% 8%, rgba(0,230,160,.10), transparent 42%),
+    radial-gradient(circle at 88% 14%, rgba(157,78,221,.10), transparent 46%),
+    radial-gradient(circle at 50% 100%, rgba(76,201,240,.07), transparent 50%),
+    #0f1712 !important;
+}
+html[data-theme="dark"] .sidebar{
+  background:rgba(16,24,19,.92)!important;border-color:rgba(255,255,255,.08)!important;
+  backdrop-filter:blur(18px);
+}
+html[data-theme="dark"] .card,
+html[data-theme="dark"] .team-card-white,
+html[data-theme="dark"] .rank-table-wrapper,
+html[data-theme="dark"] .kpi-box,
+html[data-theme="dark"] .quick-card,
+html[data-theme="dark"] .table-wrap{
+  background:linear-gradient(160deg,#182620,#131f1a)!important;
+  box-shadow:0 10px 30px -12px rgba(0,0,0,.5);
+}
+html[data-theme="dark"] .card:hover{
+  box-shadow:0 16px 40px -12px rgba(0,230,160,.16),0 0 0 1px rgba(0,230,160,.12);
+}
+html[data-theme="dark"] .lb-item{background:#182620!important;border-color:rgba(255,255,255,.07)!important;}
+html[data-theme="dark"] .lb-item:hover{border-color:var(--pop-mint)!important;box-shadow:0 10px 24px -8px rgba(0,230,160,.25);}
+html[data-theme="dark"] .theme-toggle-btn{
+  background:linear-gradient(120deg,rgba(0,230,160,.14),rgba(157,78,221,.14));
+  border-color:rgba(0,230,160,.22);
+}
+html[data-theme="dark"] .theme-toggle-track{
+  background:linear-gradient(90deg,#3a2b57,#5a3a8a)!important;
+}
+html[data-theme="dark"] .theme-toggle-thumb{
+  background:#ffe08a!important;box-shadow:0 0 10px 2px rgba(255,224,138,.55);
+}
+html[data-theme="dark"] .nature-btn.primary{
+  background:linear-gradient(120deg,var(--pop-mint),var(--pop-sky))!important;color:#0a1a13!important;
+}
+html[data-theme="dark"] ::selection{background:rgba(0,230,160,.35);color:#f1ede0;}
+html[data-theme="dark"] .card::before{opacity:1;filter:saturate(1.3) brightness(1.1);}
+</style>
 </head>  
 <body>  
 
@@ -4184,7 +4351,42 @@ html[data-theme="dark"] #dashboard .team-pulse-summary{background:rgba(0,230,160
   </div>
 </div>
 
-
+<!-- Live photo shapes: rotating "live" gallery on the dashboard -->
+<section class="live-gallery-strip" id="liveGalleryStrip" aria-label="Galeri momen hijau live">
+  <div class="live-gallery-head">
+    <div class="lg-title-row">
+      <span class="lg-live-chip"><i class="lg-live-dot"></i> LIVE</span>
+      <h3>Momen Aksi Hijau</h3>
+    </div>
+    <p>Cuplikan aktivitas berkelanjutan yang terus bergerak &amp; berganti secara otomatis.</p>
+  </div>
+  <div class="live-gallery-shapes">
+    <div class="lg-shape lg-circle" data-lg-index="0">
+      <div class="lg-bg a"></div>
+      <div class="lg-bg b"></div>
+      <span class="lg-shine"></span>
+      <span class="lg-caption">🌳 Reboisasi</span>
+    </div>
+    <div class="lg-shape lg-blob" data-lg-index="1">
+      <div class="lg-bg a"></div>
+      <div class="lg-bg b"></div>
+      <span class="lg-shine"></span>
+      <span class="lg-caption">☀️ Energi Bersih</span>
+    </div>
+    <div class="lg-shape lg-hex" data-lg-index="2">
+      <div class="lg-bg a"></div>
+      <div class="lg-bg b"></div>
+      <span class="lg-shine"></span>
+      <span class="lg-caption">♻️ Daur Ulang</span>
+    </div>
+    <div class="lg-shape lg-squircle" data-lg-index="3">
+      <div class="lg-bg a"></div>
+      <div class="lg-bg b"></div>
+      <span class="lg-shine"></span>
+      <span class="lg-caption">🌍 Bumi Hijau</span>
+    </div>
+  </div>
+</section>
 
 <!-- V15: Three rotating sustainability visual banners -->
 <section class="sustainability-visual-strip sustainability-pillars" id="sustainabilityVisualStrip" aria-label="Four Sustainability Pillars">
@@ -7910,6 +8112,66 @@ document.addEventListener('DOMContentLoaded',function(){
     if(!Number.isFinite(started)) return false;
     return (Date.now() - started) < SESSION_MAX_AGE_MS;
   };
+})();
+</script>
+
+<script id="v22-live-gallery-shapes">
+(function(){
+  'use strict';
+  var GALLERY_IMAGES = [
+    [
+      'https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=600&q=80',
+      'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=600&q=80',
+      'https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=600&q=80'
+    ],
+    [
+      'https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=600&q=80',
+      'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=600&q=80',
+      'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=600&q=80'
+    ],
+    [
+      'https://images.unsplash.com/photo-1473445361085-b9a07f55608b?auto=format&fit=crop&w=600&q=80',
+      'https://images.unsplash.com/photo-1528323273322-d81458248d40?auto=format&fit=crop&w=600&q=80',
+      'https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=600&q=80'
+    ],
+    [
+      'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80',
+      'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=600&q=80',
+      'https://images.unsplash.com/photo-1494386346843-e12284507169?auto=format&fit=crop&w=600&q=80'
+    ]
+  ];
+
+  function rotateShape(shape, imgs, state){
+    state.idx = (state.idx + 1) % imgs.length;
+    var showA = !state.aFront;
+    var front = shape.querySelector(showA ? '.lg-bg.a' : '.lg-bg.b');
+    var back  = shape.querySelector(showA ? '.lg-bg.b' : '.lg-bg.a');
+    if(!front || !back) return;
+    front.style.backgroundImage = 'url("' + imgs[state.idx] + '")';
+    requestAnimationFrame(function(){
+      front.classList.add('front');
+      back.classList.remove('front');
+    });
+    state.aFront = showA;
+  }
+
+  function initLiveGallery(){
+    var shapes = document.querySelectorAll('#liveGalleryStrip .lg-shape');
+    if(!shapes.length) return;
+    shapes.forEach(function(shape, i){
+      var imgs = GALLERY_IMAGES[i % GALLERY_IMAGES.length];
+      var layerA = shape.querySelector('.lg-bg.a');
+      if(layerA){
+        layerA.style.backgroundImage = 'url("' + imgs[0] + '")';
+        layerA.classList.add('front');
+      }
+      var state = { idx: 0, aFront: true };
+      var interval = 3200 + i * 550;
+      setInterval(function(){ rotateShape(shape, imgs, state); }, interval);
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function(){ setTimeout(initLiveGallery, 150); });
 })();
 </script>
 
